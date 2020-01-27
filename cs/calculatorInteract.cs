@@ -21,7 +21,8 @@ namespace Calculator
                 {
                     try
                     {
-                        @WriteLine($"Calculation.Logic({@inputOne}, {@inputTwo})");
+                        decimal write = Calculation.Logic(@inputOne, @inputTwo);
+                        @WriteLine($"Your answer: {write}");
                         break;
                     }
                     catch (System.FormatException)
