@@ -1,33 +1,24 @@
 using System;
-using Calculator;
 
 namespace Calculator
 {
     class Interact
     {
-        static void @WriteLine(string str)
-        {
-            Console.WriteLine(str);
-        }
-
         static void Main()
         {
             while (true)
             {
-                Interact.@WriteLine("Please enter your first number press enter then enter your second number");
-                string @inputOne = Console.ReadLine();
-                string @inputTwo = Console.ReadLine();
+                Console.WriteLine("Please enter your first number press enter then enter your second number");
                 checked
                 {
                     try
                     {
-                        decimal write = Calculation.Logic(@inputOne, @inputTwo);
-                        @WriteLine($"Your answer: {write}");
+                        Console.WriteLine($"Your answer: {Calculation.Logic(Console.ReadLine(), Console.ReadLine())}");
                         break;
                     }
                     catch (System.FormatException)
                     {
-                        @WriteLine("Sorry but your input wasn't in the correct format.");
+                        Console.WriteLine("Sorry but your input wasn't in the correct format.");
                     }
                 }
             }

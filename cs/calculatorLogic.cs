@@ -2,15 +2,11 @@ using System;
 
 namespace Calculator
 {
-    class Calculation
+    public class Calculation
     {
         static public decimal Logic(string inputOne, string inputTwo)
         {
-            var firstNumber = Convert.ToDecimal(inputOne);
-            var secondNumber = Convert.ToDecimal(inputTwo);
-            decimal result = firstNumber + secondNumber;
-            return result;
-
+            return Convert.ToDecimal(inputOne) + Convert.ToDecimal(inputTwo);
         }
     }
 }

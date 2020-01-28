@@ -14,10 +14,7 @@ namespace Calculator
                 {
                     try
                     {
-                        decimal firstNumber = Convert.ToDecimal(Console.ReadLine());
-                        decimal secondNumber = Convert.ToDecimal(Console.ReadLine());
-                        decimal result = firstNumber + secondNumber;
-                        Console.WriteLine($"Your result is: {result}");
+                        Console.WriteLine($"Your result is: {Convert.ToDecimal(Console.ReadLine()) + Convert.ToDecimal(Console.ReadLine())}");
                         break;
                     }
                     catch (System.FormatException)
