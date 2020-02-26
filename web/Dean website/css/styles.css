@@ -16,3 +16,10 @@ header {
 div#container {
     margin: 10px auto 10px auto;
 }
+
+h1.header {
+    margin-left: 15px;
+    color: white;
+    font-size: 10em;
+    font-family: sans-serif;
+}
