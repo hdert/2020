@@ -1,0 +1,18 @@
+section#content {
+    width: 800px;
+}
+
+body {
+    background-image: url(../images/back.jpg);
+    background-attachment: fixed;
+}
+
+header {
+    background-image: url(../images/banner.jpg);
+    width: 800px;
+    height: 300px;
+}
+
+div#container {
+    margin: 10px auto 10px auto;
+}

@@ -1,0 +1,19 @@
+div{
+    position: relative;
+    width: auto;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 7px;
+    margin: auto auto auto auto;
+    background-color: aqua;
+    animation: example 8s linear 0s infinite normal;
+}
+
+@keyframes example {
+  0%   {background-color:hotpink; left:0px; top:0px;}
+  25%  {background-color:deeppink; left:200px; top:0px;}
+  50%  {background-color:purple; left:200px; top:200px;}
+  75%  {background-color:blue; left:0px; top:200px;}
+  100% {background-color:deepskyblue; left:0px; top:0px;}
+}

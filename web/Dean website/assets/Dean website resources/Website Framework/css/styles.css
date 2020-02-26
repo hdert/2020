@@ -1,0 +1,52 @@
+body {
+    background-color: #666666;
+}
+
+div#container {
+    width: 800px;
+    margin: 50px auto 100px auto;
+}
+
+header, footer, nav, section {
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #999999;
+}
+
+footer {
+    background-color: #999999;
+}
+
+nav {
+    background-color: #cccccc;
+}
+
+section#main {
+    background-color: #ffffff;
+}
+
+header h1 {
+}
+
+section#main h2 {
+}
+
+section#main h3 {
+}
+
+section#main img {
+}
+
+nav a {
+    display: inline-block;
+    background-color: #ffffff;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #333333;
+}
+

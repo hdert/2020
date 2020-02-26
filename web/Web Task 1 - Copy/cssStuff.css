@@ -1,0 +1,58 @@
+body {
+    background-color: blue;
+}
+
+nav {
+    height: 100px;
+    width: 500px;
+    background-color: cyan;
+}
+
+header {
+    height: 100px;
+    width: 500px;
+    background-color: blueviolet;
+}
+
+section {
+    height: 500px;
+    width: 500px;
+    background-color: mediumaquamarine;
+}
+
+footer {
+    width: 500px;
+}
+
+div#container {
+    width: 800px;
+    margin: 0px auto;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    border: 3px solid black;
+    padding: 7px;
+    background-color: fuchsia;
+    font-size: 14pt;
+    color: ghostwhite;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 2px 4px 5px black;
+    left: 100px;
+}
+
+a:hover {
+    background-color: coral;
+    transform: rotate(3deg);
+    color: black;
+}
+
+h1 {
+    text-shadow: 2px 4px 5px black;
+}
+
+h1:hover {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,107 @@
+body {
+    width: 900px;
+    margin: 30px auto;
+    background-color: darkOliveGreen;
+    color: white;
+    font-family: Verdana;
+}
+
+header {
+    background-color: oliveDrab;
+    padding: 10px 30px 10px 30px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 10px yellow;
+}
+
+h1 { 
+    color: yellow;
+    margin: 0;
+    font-size: 40pt;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    padding: 15px 0 10px 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: none;
+
+    background-color: fireBrick;
+    color: Khaki;
+
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0px 1px 3px black;
+}
+
+nav a:hover {
+    background-color: yellow;
+    color: black;
+    box-shadow: 0px 3px 8px black;
+}
+
+footer {
+    clear: both;
+    margin-top: 20px;
+    padding-top: 5px;
+
+    border-top: 2px solid yellow;
+
+    color: yellow;
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: center;
+}
+
+img {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    box-shadow: 0px 3px 8px black;
+}
+
+img.centered {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+img.rightside {
+    float: right;
+    margin: 0 0 20px 30px;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+th {
+    color: yellow;
+    font-style: italic; 
+}
+
+td {
+    border: 2px solid yellow;
+    padding: 10px;
+    background-color: yellowGreen;
+    color: black;
+    vertical-align: top;
+}
+
+td h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+td img {
+    box-shadow: none;
+    margin: 0;
+}

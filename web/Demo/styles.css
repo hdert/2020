@@ -1,0 +1,27 @@
+/*But you can find CSS here*/
+div{
+    background-color:  #D60270;
+    height: 420px;
+    width: 1900px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px grey;
+}
+
+div#divTwo{
+    background-color: #9B4F96;
+    height: 2000px;
+    background-image: url(kawaiikonekochann.jpg);
+    background-blend-mode: screen;
+}
+
+div#divThree{
+    background-color: #0038A8;
+}
+
+p{
+    padding-left: 50%;
+    position: relative;
+    top: 50%;
+    font-size: 50px;
+    font-family: fantasy;
+}
