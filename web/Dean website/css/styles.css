@@ -6,6 +6,7 @@ body {
     background-color: #666666;
     background-image: url(../images/back.jpg);
     background-attachment: fixed;
+    padding-top: 20px;
 }
 
 div#container {
@@ -15,7 +16,6 @@ div#container {
 
 header, footer, nav, section {
     margin: 0;
-    padding: 20px;
 }
 
 header {
@@ -33,6 +33,7 @@ footer {
 nav {
     background-color: #cccccc;
     width: 800px;
+    padding-bottom: 20px;
 }
 
 section#content {
