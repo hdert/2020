@@ -34,6 +34,7 @@ nav {
     background-color: #cccccc;
     width: 800px;
     padding-bottom: 20px;
+    text-align: center;
 }
 
 section#content {
@@ -83,4 +84,7 @@ nav a:hover {
 p {
     font-family: Verdana, sans-serif;
     font-size: 14pt;
+}
+footer img#shielded-logo {
+    margin-left: 90%;
 }
