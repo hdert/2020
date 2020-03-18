@@ -1,5 +1,5 @@
 section#content {
-    width: 800px;
+    width: 760px;
 }
 
 body {
@@ -10,29 +10,35 @@ body {
 }
 
 div#container {
-    width: 800px;
+    width: 760px;
     margin: 50px auto 100px auto;
 }
 
 header, footer, nav, section {
     margin: 0;
+    padding: 10px 20px 10px 20px;
 }
 
 header {
     background-color: #999999;
     background-image: url(../images/banner.jpg);
-    width: 800px;
-    height: 300px;
+    width: 760px;
+    height: 280px;
 }
 
 footer {
     background-color: #999999;
-    width: 800px;
+    width: 760px;
+    border-top: 2px solid black;
+    font-size: 8pt;
+    text-align: center;
+    color: white;
+    font-style: italic;
 }
 
 nav {
     background-color: #cccccc;
-    width: 800px;
+    width: 760px;
     padding-bottom: 20px;
     text-align: center;
 }
@@ -57,7 +63,12 @@ section#content h3 {
 }
 
 section#content img {
-
+    display: block;
+    margin: 10px auto 10px auto;
+    padding: 7px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 2px 4px 8px black;
 }
 
 nav a {
