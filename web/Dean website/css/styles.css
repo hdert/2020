@@ -99,3 +99,11 @@ p {
 footer img#shielded-logo {
     margin-left: 90%;
 }
+
+section.gallery a img{
+    float: inline-start;
+}
+
+section.gallery {
+    height: 1400px;
+}
