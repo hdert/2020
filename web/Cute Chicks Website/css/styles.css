@@ -1,7 +1,6 @@
 body {
     background-image: url(../Graphics/back.jpg);
     background-attachment: fixed;
-
 }
 
 nav a {
@@ -9,12 +8,13 @@ nav a {
 }
 
 div#content {
-    width: 80%;
+    width: 100%;
     min-width: 700px;
     display: table;
 }
 
 div#container {
+    width: 80%;
     margin: 20px auto 20px auto;
     min-width: 900px;
 }
