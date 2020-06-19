@@ -1,0 +1,46 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Ubuntu:wght@300&display=swap");
+* {
+  color: $color;
+  background-color: $bgcolor;
+  font-family: "Ubuntu", sans-serif;
+  @include box-sizing(border-box);
+  font-weight: normal;
+  /* Makes header text look the same between gecko and blink */
+}
+/* Sets default styling */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Questrial", sans-serif;
+}
+/* Set default font for h[1-6] tags */
+
+p {
+  margin: 0;
+}
+
+/* For making entries closer looking together */
+
+/* For making in page navigation smooth */
+
+html {
+  scroll-behavior: smooth;
+}
+
+hr {
+  margin: 0;
+}
+
+/* Make the hr tag look cleaner */
+
+/* For <h[1-6]> tags that need to be centered */
+
+.center {
+  text-align: center;
+}

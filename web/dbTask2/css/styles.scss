@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@use 'modules/defaults';
+@use 'modules/responsive';
+@use 'modules/mixins' as *;
+
+div img {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  @include transformTranslate(-50%, 0%);
+  max-width: 100%;
+}
+
+td,
+th {
+  margin: 0 1em;
+}

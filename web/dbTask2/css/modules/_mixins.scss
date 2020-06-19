@@ -1,0 +1,9 @@
+@mixin box-sizing($param) {
+  -webkit-box-sizing: $param;
+  box-sizing: $param;
+}
+@mixin transformTranslate($param, $param2) {
+  -webkit-transform: translate($param, $param2);
+  -ms-transform: translate($param, $param2);
+  transform: translate($param, $param2);
+}
