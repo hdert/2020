@@ -1,1 +1,8 @@
 connect.php
+node_modules/
+yarn.lock
+.yarnrc
+.yarnrc.yml
+package.json
+.pnp.js
+.yarn/
