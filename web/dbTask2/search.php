@@ -34,11 +34,11 @@
                                                         print "checked=\"checked\"";
                                                       } ?> />
         <label for="radio">&#60&#61</label>
-        <input type="radio" name="costSort" value="<=" <?php if ($_POST['costSort'] == "<=") {
-                                                          print "checked=\"checked\"";
-                                                        } else if ($_POST['costSort'] == "" || $_POST['select'] != "cost") {
-                                                          print "checked=\"checked\"";
-                                                        } ?> />
+        <input type="radio" name="costSort" id="defaultCostSort" value="<=" <?php if ($_POST['costSort'] == "<=") {
+                                                                              print "checked=\"checked\"";
+                                                                            } else if ($_POST['costSort'] == "" || $_POST['select'] != "cost") {
+                                                                              print "checked=\"checked\"";
+                                                                            } ?> />
         <label for="radio">&#61</label>
         <input type="radio" name="costSort" value="=" <?php if ($_POST['costSort'] == "=" && $_POST['select'] == "cost") {
                                                         print "checked=\"checked\"";
