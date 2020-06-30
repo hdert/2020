@@ -31,12 +31,12 @@
 
       while ($record = mysqli_fetch_array($results)) {
         print "<tr>
-            <td>" . "<p>" . $record['name'] . "</p><br>" . "</td>
-            <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
-            <td>" . "<p>" . $record['rating'] . "</p><br>" . "</td>
-            <td>" . "<p>" . $record['instock'] . "</p><br>" . "</td>
-            <td>" . "<div class=\"picture\"><a href=\"/" . $record['images'] . "\" target=\"_blank\"><img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" /></a></div><br>" . "</td>
-            </tr>";
+          <td>" . "<p>" . $record['name'] . "</p><br>" . "</td>
+          <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
+          <td>" . "<p>" . $record['rating'] . "</p><br>" . "</td>
+          <td>" . "<p>" . $record['instock'] . "</p><br>" . "</td>
+          <td>" . "<div class=\"picture\"><a href=\"/" . $record['images'] . "\" target=\"_blank\"><img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" /></a></div><br>" . "</td>
+        </tr>";
       }
       ?>
     </table>

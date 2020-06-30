@@ -6,3 +6,4 @@ yarn.lock
 package.json
 .pnp.js
 .yarn/
+tsconfig.json
