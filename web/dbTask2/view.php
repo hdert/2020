@@ -25,10 +25,11 @@
       include("./connect.php");
       $id = $_GET['id'];
 
-      $query = "SELECT * FROM `games` WHERE `id` = $id";
-      $results = mysqli_query($link, $query);
+      $query = $mysqli->prepare("SELECT * FROM `games` WHERE `id` = $id");
+      $query->execute();
+      $results = $query->get_result();
       // Loop through the set of results, one record at a time
-      $record = mysqli_fetch_array($results);
+      $record = $results->fetch_array();
       print "<tr>
         <td>" . "<p>" . $record['name'] . "</p><br>" . "</td>
         <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
@@ -36,7 +37,7 @@
         <td>" . "<p>" . $record['instock'] . "</p><br>" . "</td>
         <td>" . "<div class=\"picture\"><a href=\"/" . $record['images'] . "\" target=\"_blank\"><img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" /></a></div><br>" . "</td>
       </tr>";
-      mysqli_close($link);
+      $query->close();
       ?>
     </table>
   </div>
