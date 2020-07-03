@@ -1,8 +1,8 @@
 "use strict";
 
-let SELECT = document.getElementById("select") as HTMLSelectElement;
-let RADIO = document.getElementById("radio") as HTMLDivElement;
-let DEFAULT = document.getElementById("defaultCostSort") as HTMLInputElement;
+const SELECT = document.getElementById("select") as HTMLSelectElement;
+const RADIO = document.getElementById("radio") as HTMLDivElement;
+const DEFAULT = document.getElementById("defaultCostSort") as HTMLInputElement;
 
 function checkSelect() {
   if (SELECT.options[SELECT.selectedIndex].value == "cost") {

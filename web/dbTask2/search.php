@@ -66,34 +66,55 @@
       include("./connect.php");
       $search = $_POST['search'];
       $select = $_POST['select'];
-      $operater = $_POST['costSort'];
 
       if ($search) {
         if ($select == "cost") {
-          $query = "SELECT * FROM `games` WHERE `$select` $operater '$search'";
+          switch ($_POST['costSort']) {
+            case "<":
+              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` < ?");
+              break;
+            case "<=":
+              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` <= ?");
+              break;
+            case "=":
+              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` = ?");
+              break;
+            case ">=":
+              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` >= ?");
+              break;
+            case ">":
+              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` > ?");
+              break;
+          }
+          $query->bind_param("i", $search);
         } else if ($select == "rating") {
-          $query = "SELECT * FROM `games` WHERE `$select` = '$search'";
-        } else {
-          $query = "SELECT * FROM `games` WHERE `$select` LIKE '%$search%'";
+          $query = $mysqli->prepare("SELECT * FROM `games` WHERE `rating` = ?");
+          $query->bind_param("s", $search);
+        } else if ($select == "name") {
+          $query = $mysqli->prepare("SELECT * FROM `games` WHERE `name` LIKE ?");
+          $wildcardSearch = "%$search%";
+          $query->bind_param("s", $wildcardSearch);
         }
-        $results = mysqli_query($link, $query);
+        $query->execute();
+        $results = $query->get_result();
         // Loop through the set of results, one record at a time
-        while ($record = mysqli_fetch_array($results)) {
+        while ($record = $results->fetch_array()) {
           print "<tr>
             <td>" . "<p>" . $record['name'] . "</p><br>" . "</td>
             <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
             <td>" . "<p>" . $record['rating'] . "</p><br>" . "</td>
             <td>" . "<p>" . $record['instock'] . "</p><br>" . "</td>
-            <td>" . "<div class=\"picture\"><a href=\"/" . $record['images'] . "\" tarPOST=\"_blank\"><img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" /></a></div><br>" . "</td>
+            <td>" . "<div class=\"picture\"><a href=\"/" . $record['images'] . "\" target=\"_blank\"><img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" /></a></div><br>" . "</td>
           </tr>";
         }
+        $query->close();
       }
-      mysqli_close($link);
       ?>
+
     </table>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>

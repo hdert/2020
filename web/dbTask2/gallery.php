@@ -17,17 +17,18 @@
     <?php
     include("./connect.php");
 
-    $query = "SELECT * FROM `games`";
-    $results = mysqli_query($link, $query);
+    $query = $mysqli->prepare("SELECT * FROM `games`");
+    $query->execute();
+    $results = $query->get_result();
     // Loop through the set of results, one record at a time
-    while ($record = mysqli_fetch_array($results)) {
+    while ($record = $results->fetch_array()) {
       print "<div class=\"picture col-4\">
         <a href=\"/view.php?id=" . $record['id'] . "\">
           <img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" />
         </a>
       </div>";
     }
-    mysqli_close($link);
+    $query->close();
     ?>
   </div>
 </body>
