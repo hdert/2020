@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>dbTask2</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
@@ -16,7 +17,7 @@
 
     <form method="POST">
       <label>Search</label>
-      <input type="text" name="search" value="<?php print $_POST['search'] ?>" />
+      <input type="text" name="search" value="<?php print $_POST['search'] ?>" autofocus onfocus="let x=this.value; this.value=null; this.value=x" />
       <select name="select" onchange="checkSelect();" id="select">
         <option value="name" <?php if ($_POST['select'] == "name") {
                                 print "selected=\"selected\"";
@@ -104,7 +105,11 @@
             <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
             <td>" . "<p>" . $record['rating'] . "</p><br>" . "</td>
             <td>" . "<p>" . $record['instock'] . "</p><br>" . "</td>
-            <td>" . "<div class=\"picture\"><a href=\"/" . $record['images'] . "\" target=\"_blank\"><img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" /></a></div><br>" . "</td>
+            <td>" . "<div class=\"picture\">
+              <a href=\"/view.php?id=" . $record['id'] . "\" target=\"_blank\">
+                <img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" />
+              </a>
+            </div><br>" . "</td>
           </tr>";
         }
         $query->close();

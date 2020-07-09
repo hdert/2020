@@ -2,7 +2,8 @@
 <html lang="utf-8">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>dbTask2</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
@@ -35,7 +36,11 @@
           <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
           <td>" . "<p>" . $record['rating'] . "</p><br>" . "</td>
           <td>" . "<p>" . $record['instock'] . "</p><br>" . "</td>
-          <td>" . "<div class=\"picture\"><a href=\"/" . $record['images'] . "\" target=\"_blank\"><img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" /></a></div><br>" . "</td>
+          <td>" . "<div class=\"picture\">
+            <a href=\"/view.php?id=" . $record['id'] . "\" target=\"_blank\">
+              <img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" />
+            </a>
+          </div><br>" . "</td>
         </tr>";
       }
       $query->close()
