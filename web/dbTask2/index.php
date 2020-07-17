@@ -24,13 +24,11 @@
       <?php
       include("./connect.php");
 
-      $query = $mysqli->prepare("SELECT * FROM `games`;");
-      $query->execute();
-      $results = $query->get_result();
+      $query = $pdo->query("SELECT * FROM `games`;");
 
       // Loop through the set of results, one record at a time
 
-      while ($record = $results->fetch_array()) {
+      foreach ($query as $record) {
         print "<tr>
           <td>" . "<p>" . $record['name'] . "</p><br>" . "</td>
           <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
@@ -43,7 +41,8 @@
           </div><br>" . "</td>
         </tr>";
       }
-      $query->close()
+      $query = null;
+      $pdo = null;
       ?>
     </table>
   </div>

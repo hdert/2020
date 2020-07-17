@@ -18,18 +18,17 @@
     <?php
     include("./connect.php");
 
-    $query = $mysqli->prepare("SELECT * FROM `games`");
-    $query->execute();
-    $results = $query->get_result();
+    $query = $pdo->query("SELECT * FROM `games`");
     // Loop through the set of results, one record at a time
-    while ($record = $results->fetch_array()) {
+    foreach ($query as $record) {
       print "<div class=\"picture col-4\">
         <a href=\"/view.php?id=" . $record['id'] . "\">
           <img src=\"/" . $record['images'] . "\" alt=\"" . $record['name'] . "\" />
         </a>
       </div>";
     }
-    $query->close();
+    $query = null;
+    $pdo = null;
     ?>
   </div>
 </body>

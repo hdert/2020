@@ -72,34 +72,30 @@
         if ($select == "cost") {
           switch ($_POST['costSort']) {
             case "<":
-              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` < ?");
+              $query = $pdo->prepare("SELECT * FROM `games` WHERE `cost` < ?");
               break;
             case "<=":
-              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` <= ?");
+              $query = $pdo->prepare("SELECT * FROM `games` WHERE `cost` <= ?");
               break;
             case "=":
-              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` = ?");
+              $query = $pdo->prepare("SELECT * FROM `games` WHERE `cost` = ?");
               break;
             case ">=":
-              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` >= ?");
+              $query = $pdo->prepare("SELECT * FROM `games` WHERE `cost` >= ?");
               break;
             case ">":
-              $query = $mysqli->prepare("SELECT * FROM `games` WHERE `cost` > ?");
+              $query = $pdo->prepare("SELECT * FROM `games` WHERE `cost` > ?");
               break;
           }
-          $query->bind_param("i", $search);
         } else if ($select == "rating") {
-          $query = $mysqli->prepare("SELECT * FROM `games` WHERE `rating` = ?");
-          $query->bind_param("s", $search);
+          $query = $pdo->prepare("SELECT * FROM `games` WHERE `rating` = ?");
         } else if ($select == "name") {
-          $query = $mysqli->prepare("SELECT * FROM `games` WHERE `name` LIKE ?");
-          $wildcardSearch = "%$search%";
-          $query->bind_param("s", $wildcardSearch);
+          $query = $pdo->prepare("SELECT * FROM `games` WHERE `name` LIKE ?");
+          $search = "%$search%";
         }
-        $query->execute();
-        $results = $query->get_result();
+        $query->execute([$search]);
         // Loop through the set of results, one record at a time
-        while ($record = $results->fetch_array()) {
+        foreach ($query as $record) {
           print "<tr>
             <td>" . "<p>" . $record['name'] . "</p><br>" . "</td>
             <td>" . "<p>" . $record['cost'] . "</p><br>" . "</td>
@@ -112,8 +108,9 @@
             </div><br>" . "</td>
           </tr>";
         }
-        $query->close();
       }
+      $query = null;
+      $pdo = null;
       ?>
 
     </table>
