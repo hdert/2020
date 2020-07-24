@@ -8,7 +8,7 @@ rooms = ['Hall', 'Hall2', 'Courtyard', 'Hall3', 'Kitchen', 'Hall4', 'Hall5', 'Be
 
 desc = ['Hall with carpet', 'Hall with paintings', 'Courtyard with paving stones', 'Hallway with plants', 'Kitchen has old moldy food', 'Hallway has rat droppings', 'Hallway has dusty cobwebs', 'Bedroom has a bed in it', 'Has cheese in it']
 
-n = [1, 2, 3, 4, 99, 99, 99, 99]
+n = [1, 2, 3, 4, 99, 99, 99, 99, 99]
 
 s = [99, 0, 1, 2, 3, 99, 99, 99, 99]
 
@@ -16,9 +16,9 @@ e = [99, 99, 6, 99, 99, 2, 8, 5, 99]
 
 w = [99, 99, 5, 99, 99, 7, 2, 99, 6]
 
-print(rooms[room], desc[room])
-
 while True:
+  print("You are in", rooms[room], desc[room])
+
   if n[room] != 99:
     print("You can go north")
 
