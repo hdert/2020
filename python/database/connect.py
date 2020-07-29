@@ -14,65 +14,73 @@ def createTable(c):
     params - none
     return - none
     '''
-    c.execute("""
-    CREATE TABLE IF NOT EXISTS members(
-    username DATATYPE text,
-    password DATATYPE text
-    )
-    """)
+    try:
+        c.execute("""
+        CREATE TABLE IF NOT EXISTS members (
+        username TEXT,
+        password TEXT
+        );
+        """)
+    except:
+        print("Error")
+        return False
+    return True
 
 
 def showResults(results):
     for i in results:
-        print(i[0], i[1])
+        print(i[0], i[1], i[2])
 
 
-def checkUser(results):
-    username = input("Username: ").lower()
-    for y in range(0, 3):
-        password = False
-        for i in results:
-            if username == i[0]:
-                password = checkPassword(i, password)
-                if password == True:
-                    return [False, i]
-    return [password, False]
+def authenticate(results):
+    global isGreen
+    for x in range(3):
+        username = input("Username: ").lower()
+        for y in range(3):
+            password = None
+            for i in results:
+                if username == i[1]:
+                    password = authenticatePassword(i[2], password)
+                    isGreen = False
+                    if password == True:
+                        print(
+                            f"You successfully authenticated as the user {i[1]} with the id {i[0]}")
+                        return [i[0], i[1]]
+            if y == 2 and isGreen == False:
+                print("You failed to authenticate")
+                return
+    print("You failed to authenticate")
+    isGreen = False
+    return
 
 
-def checkPassword(results, password):
-    if password == False:
+def authenticatePassword(user, password):
+    if password == None:
         password = input("Password: ")
-    if password == results[1]:
+    if password == user:
         return True
     else:
         return password
 
-# Main
 
+# Main
+isGreen = True
 
 if __name__ == '__main__':
 
     conn = connect()
     c = conn.cursor()  # creating cursor
-    createTable(c)
-    try:
-        c.executemany("INSERT INTO `members` VALUES (?,?)", [
-                      ['bob', 'secret'], ['jones', 'notSoSecret'], ['bob', 's'], ['bob', 'se'], ['bob', 'sec'], ['bob', 'secr'], ['bob', 'secre']])
-        c.execute("SELECT * FROM `members`")
-    except:
-        print("Error")
+    isGreen = createTable(c)
+    if isGreen == True:
+        try:
+            c.executemany("INSERT INTO members VALUES (?,?)", [
+                ['bob', 'secret'], ['jones', 'notSoSecret'], ['bob', 's'], ['bob', 'se'], ['bob', 'sec'], ['bob', 'secr'], ['bob', 'secre']])
+            c.execute("SELECT rowid,* FROM `members`")
+        except:
+            print("Error")
+            isGreen = False
+        if isGreen == True:
+            results = c.fetchall()
 
-    results = c.fetchall()
-
-    for x in range(0, 3):
-        user = checkUser(results)
-        if user[1] != False:
-            print(
-                f"You succesfully authenticated as the user {user[1][0]} {user[1][1]}")
-            break
-        elif x == 2 or user[0] != False:
-            print("You failed to authenticate")
-            break
-    showResults(results)
-
+            user = authenticate(results)
     conn.close()
