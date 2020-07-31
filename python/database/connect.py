@@ -80,7 +80,5 @@ if __name__ == '__main__':
             print("Error")
             isGreen = False
         if isGreen == True:
-            results = c.fetchall()
-
-            user = authenticate(results)
+            user = authenticate(c.fetchall())
     conn.close()
