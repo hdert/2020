@@ -1,7 +1,8 @@
 def main(uChoice):
     for x in range(10):
         for i in range(1, 11):
-            print(f"{(x * 10 + i) * uChoice:4}", end='')
+            print(
+                f"{(x * 10 + i) * uChoice:{len(str(100 * uChoice))}}", end=' ')
         print()
 
 
