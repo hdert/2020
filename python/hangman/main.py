@@ -2,8 +2,6 @@ game = "Welcome to Hangman"
 
 print("-" * len(game))
 
-print(f"""
-{game}
-""")
+print(game)
 
 print("-" * len(game))
