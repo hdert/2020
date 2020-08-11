@@ -1,2 +1,9 @@
-print("Welcome to hangman")
-print("You need to guess the secret word")
+game = "Welcome to Hangman"
+
+print("-" * len(game))
+
+print(f"""
+{game}
+""")
+
+print("-" * len(game))
