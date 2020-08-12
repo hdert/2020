@@ -15,13 +15,19 @@ def connDb():
     return conn, conn.cursor()
 
 
+def showDb(c):
+    c.execute("SELECT * FROM players ORDER BY score DESC")
+    records = c.fetchall()
+    for i in records:
+        print(i[0], f"{i[1]:{len(str(records[0][1]))}}")
+
+
 def main():
     if not os.path.isfile('main.db'):
         import dbCreate
         dbCreate.main()
     conn, c = connDb()
-    c.execute("SELECT * FROM players")
-    print(c.fetchall())
+    showDb(c)
 
 
 if __name__ == "__main__":

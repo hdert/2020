@@ -20,7 +20,7 @@ def main():
         conn, c = connDb()
         c.execute('''CREATE TABLE IF NOT EXISTS players (
             username DATATYPE text,
-            score DATATYPE text
+            score DATATYPE int
         )''')
 
         c.executemany("INSERT INTO players VALUES(?,?)", [['player1', 10], [
