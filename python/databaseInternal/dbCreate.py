@@ -1,8 +1,9 @@
 import sqlite3
 from sqlite3 import Error
+import os.path
 
 
-def main():
+def connDb():
     conn = None
     db_file = "main.db"
 
@@ -11,19 +12,21 @@ def main():
     except Error as e:
         print(e)
 
-    c = conn.cursor()
+    return conn, conn.cursor()
 
-    c.execute('''CREATE TABLE IF NOT EXISTS players (
-        username DATATYPE text,
-        score DATATYPE text
-    )''')
 
-    c.executemany("INSERT INTO players VALUES(?,?)", [['player1', 10], [
-                  'player2', 20], ['player3', 5], ['player4', 15]])
-    c.execute("SELECT * FROM players")
-    print(c.fetchall())
-    conn.commit()
-    conn.close()
+def main():
+    if not os.path.isfile('main.db'):
+        conn, c = connDb()
+        c.execute('''CREATE TABLE IF NOT EXISTS players (
+            username DATATYPE text,
+            score DATATYPE text
+        )''')
+
+        c.executemany("INSERT INTO players VALUES(?,?)", [['player1', 10], [
+            'player2', 20], ['player3', 5], ['player4', 15]])
+        conn.commit()
+        conn.close()
 
 
 if __name__ == "__main__":
