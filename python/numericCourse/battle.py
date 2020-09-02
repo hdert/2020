@@ -33,7 +33,8 @@ def main(hp, en_hp):
             if en_atk != 0:
                 if rand(1, 2) == 1:
                     print(
-                        f"You block with your shield blocking {en_atk} damage and rebounding it onto the orc!")
+                        f"You block with your shield blocking {en_atk} damage and rebounding it onto the orc!"
+                    )
                     en_hp -= en_atk
                     en_atk = 0
                 else:

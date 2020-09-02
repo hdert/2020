@@ -34,7 +34,9 @@ def showDb(c):
         if len(i[1]) > lenUsername:
             lenUsername = len(i[1])
     linePrint(records, lenId, lenUsername, lenScore)
-    print(f"| {'id':>{lenId}} | {'name':^{lenUsername}} | {'score':>{lenScore}} |")
+    print(
+        f"| {'id':>{lenId}} | {'name':^{lenUsername}} | {'score':>{lenScore}} |"
+    )
     for i in records:
         print(f"| {i[0]:{lenId}} | {i[1]:{lenUsername}} | {i[2]:{lenScore}} |")
     linePrint(records, lenId, lenUsername, lenScore)

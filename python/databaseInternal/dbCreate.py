@@ -23,8 +23,9 @@ def main():
             score DATATYPE int
         )''')
 
-        c.executemany("INSERT INTO players VALUES(?,?)", [['player1', 10], [
-            'player2', 20], ['player3', 5], ['player4', 15]])
+        c.executemany("INSERT INTO players VALUES(?,?)",
+                      [['player1', 10], ['player2', 20], ['player3', 5],
+                       ['player4', 15]])
         conn.commit()
         conn.close()
 

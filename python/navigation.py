@@ -4,11 +4,17 @@ Author: Justin Muirhead
 
 room = 0
 
-rooms = ['Hall', 'Hall2', 'Courtyard', 'Hall3',
-         'Kitchen', 'Hall4', 'Hall5', 'Bedroom', 'CheeseRoom']
+rooms = [
+    'Hall', 'Hall2', 'Courtyard', 'Hall3', 'Kitchen', 'Hall4', 'Hall5',
+    'Bedroom', 'CheeseRoom'
+]
 
-desc = ['Hall with carpet', 'Hall with paintings', 'Courtyard with paving stones', 'Hallway with plants', 'Kitchen has old moldy food',
-        'Hallway has rat droppings', 'Hallway has dusty cobwebs', 'Bedroom has a bed in it', 'Has cheese in it']
+desc = [
+    'Hall with carpet', 'Hall with paintings', 'Courtyard with paving stones',
+    'Hallway with plants', 'Kitchen has old moldy food',
+    'Hallway has rat droppings', 'Hallway has dusty cobwebs',
+    'Bedroom has a bed in it', 'Has cheese in it'
+]
 
 n = [1, 2, 3, 4, 99, 99, 99, 99, 99]
 

@@ -44,7 +44,8 @@ def authenticate(results):
                     isGreen = False
                     if password == True:
                         print(
-                            f"You successfully authenticated as the user {i[1]} with the id {i[0]}")
+                            f"You successfully authenticated as the user {i[1]} with the id {i[0]}"
+                        )
                         return [i[0], i[1]]
             if y == 2 and isGreen == False:
                 print("You failed to authenticate")
@@ -73,8 +74,10 @@ if __name__ == '__main__':
     isGreen = createTable(c)
     if isGreen == True:
         try:
-            c.executemany("INSERT INTO members VALUES (?,?)", [
-                ['bob', 'secret'], ['jones', 'notSoSecret'], ['bob', 's'], ['bob', 'se'], ['bob', 'sec'], ['bob', 'secr'], ['bob', 'secre']])
+            c.executemany("INSERT INTO members VALUES (?,?)",
+                          [['bob', 'secret'], ['jones', 'notSoSecret'],
+                           ['bob', 's'], ['bob', 'se'], ['bob', 'sec'],
+                           ['bob', 'secr'], ['bob', 'secre']])
             c.execute("SELECT rowid,* FROM `members`")
         except:
             print("Error")

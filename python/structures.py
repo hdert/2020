@@ -31,7 +31,7 @@ def display_weapons(weapons):
     for i in weapons:
         string = string + \
             f"[{i[0]}]{i[1:]}, {weapons[i][0]} to {weapons[i][1]}; "
-    return string[: -1]
+    return string[:-1]
 
 
 def display_stats(stats):
@@ -45,17 +45,19 @@ def battle(stats, en_stats):
         while attack != 's' or attack != 's' or attack != 'd' or attack != 'b':
             attack = input("Choose your weapon: ").lower()
         rand = random.randint(1, 2)
-        if(rand == 1):
+        if (rand == 1):
             pass
         else:
             pass
 
 
 # Main
-weapons = {'Sword': [15, 20],
-           'Staff': [10, 15],
-           'Dagger': [3, 8],
-           'Bow': [10, 12]}
+weapons = {
+    'Sword': [15, 20],
+    'Staff': [10, 15],
+    'Dagger': [3, 8],
+    'Bow': [10, 12]
+}
 rand = random.randint(weapons['Sword'][0], weapons['Sword'][1])
 print(rand)
 hp = 100
