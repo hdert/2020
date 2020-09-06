@@ -9,11 +9,11 @@ def connect():
 
 
 def createTable(c):
-    '''
-    This makes a table
-    params - none
-    return - none
-    '''
+    """This makes a table
+    
+    Keyword arguments:
+    c -- the cursor object of the connected database
+    """
     try:
         c.execute("""
         CREATE TABLE IF NOT EXISTS members (
