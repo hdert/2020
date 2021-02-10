@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:10.5.8
+    volumes:
+      - ./db:/var/lib/mysql
+    env_file:
+      - db.env
+  adminer:
+    image: adminer:4.7.9
+    ports:
+      - 8080:8080
+  phpmyadmin:
+    image: phpmyadmin:5.0.4-fpm-alpine
+    ports:
+      - 8081:80
+  web:
+    build: ./php
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 80:80
