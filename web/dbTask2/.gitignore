@@ -7,3 +7,4 @@ package.json
 .pnp.js
 .yarn/
 tsconfig.json
+db.env
