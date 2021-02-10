@@ -8,3 +8,4 @@ package.json
 .yarn/
 tsconfig.json
 db.env
+db/
