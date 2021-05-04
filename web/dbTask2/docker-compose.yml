@@ -2,21 +2,25 @@ version: "3"
 
 services:
   db:
-    image: mariadb:10.5.8
+    build: ./build/db
     volumes:
       - ./db:/var/lib/mysql
     env_file:
       - db.env
+    # command: --default-authentication-plugin=mysql_native_password
+    network_mode: host
   adminer:
-    image: adminer:4.7.9
+    image: adminer:4.8.0
     ports:
-      - 8080:8080
+      - 8081:8080
   phpmyadmin:
-    image: phpmyadmin:5.0.4-fpm-alpine
+    image: phpmyadmin:5.0.4-apache
     ports:
-      - 8081:80
+      - 8080:80
+    # environment:
+      # - PMA_ARBITRARY=1
   web:
-    build: ./php
+    build: ./build/php
     volumes:
       - .:/var/www/html/
     ports:
